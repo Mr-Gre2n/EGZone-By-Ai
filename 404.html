@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | EgZone</title>
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <h1><span>Eg</span>Zone</h1>
+        </a>
+      </div>
+      
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+            <li><a href="index.html?category=Computers">Computers</a></li>
+            <li><a href="index.html?category=Accessories">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+      
+      <div class="navbar-actions">
+        <div class="search-container">
+          <form id="search-form">
+            <input type="text" class="search-input" placeholder="Search products...">
+            <button type="submit" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+        
+        <div class="auth-links">
+          <a href="login.html" title="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+        
+        <div class="user-dropdown" style="display: none;">
+          <a href="#" class="dropdown-toggle">
+            <i class="fas fa-user-circle"></i>
+            <span class="user-name">User</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="add-product.html">Add Product</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+          </ul>
+        </div>
+        
+        <a href="cart.html" class="cart-icon" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 404 Section -->
+  <section class="section error-section">
+    <div class="container">
+      <div class="error-content">
+        <div class="error-icon">
+          <i class="fas fa-exclamation-circle"></i>
+        </div>
+        <h1 class="error-title">404</h1>
+        <h2 class="error-subtitle">Page Not Found</h2>
+        <p class="error-text">Oops! The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+        <div class="error-actions">
+          <a href="index.html" class="btn">Back to Home</a>
+          <a href="contact.html" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-column">
+        <h3>EgZone</h3>
+        <p>Your one-stop shop for the latest electronics and gadgets. We offer a wide range of products at competitive prices.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="help.html">Help & FAQs</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Categories</h3>
+        <ul class="footer-links">
+          <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+          <li><a href="index.html?category=Computers">Computers</a></li>
+          <li><a href="index.html?category=Accessories">Accessories</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="footer-contact">
+          <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Cairo, Egypt</p>
+          <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+          <p><i class="fas fa-envelope"></i> info@egzone.com</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2023 EgZone. All rights reserved. | Designed with <i class="fas fa-heart"></i> by EgZone Team</p>
+    </div>
+  </footer>
+  
+  <!-- JavaScript Files -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+  
+  <style>
+    /* 404 Page Styles */
+    .error-section {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .error-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .error-icon {
+      font-size: 80px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+    
+    .error-title {
+      font-size: 120px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 0;
+      line-height: 1;
+    }
+    
+    .error-subtitle {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+    
+    .error-text {
+      font-size: 18px;
+      color: var(--light-text);
+      margin-bottom: 30px;
+    }
+    
+    .error-actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    /* Responsive Styles */
+    @media only screen and (max-width: 768px) {
+      .error-title {
+        font-size: 100px;
+      }
+      
+      .error-subtitle {
+        font-size: 28px;
+      }
+      
+      .error-text {
+        font-size: 16px;
+      }
+    }
+    
+    @media only screen and (max-width: 576px) {
+      .error-title {
+        font-size: 80px;
+      }
+      
+      .error-subtitle {
+        font-size: 24px;
+      }
+      
+      .error-actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</body>
+</html>

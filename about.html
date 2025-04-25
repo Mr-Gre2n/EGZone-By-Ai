@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - EgZone</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <h1><span>Eg</span>Zone</h1>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+            <li><a href="index.html?category=Computers">Computers</a></li>
+            <li><a href="index.html?category=Accessories">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <div class="search-container">
+          <form id="search-form">
+            <input type="text" class="search-input" placeholder="Search products...">
+            <button type="submit" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <div class="live-search-results"></div>
+        </div>
+
+        <div class="auth-links">
+          <a href="login.html" title="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+
+        <div class="user-dropdown" style="display: none;">
+          <a href="#" class="dropdown-toggle">
+            <i class="fas fa-user-circle"></i>
+            <span class="user-name">User</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="add-product.html">Add Product</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+          </ul>
+        </div>
+
+        <a href="cart.html" class="cart-icon" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>Learn more about EgZone and our mission</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about-section">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="EgZone Store">
+        </div>
+        <div class="about-text">
+          <h2>Our Story</h2>
+          <p>Founded in 2020, EgZone started with a simple mission: to provide high-quality electronics at affordable prices to customers across Egypt and beyond.</p>
+          <p>What began as a small online shop has grown into one of the region's most trusted electronics retailers, offering a wide range of products from smartphones and computers to accessories and smart home devices.</p>
+          <p>Our team of tech enthusiasts is dedicated to curating the best products and providing exceptional customer service. We believe that everyone deserves access to the latest technology without breaking the bank.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="section mission-section">
+    <div class="container">
+      <h2 class="section-title">Our Mission</h2>
+      <p class="section-subtitle">What drives us every day</p>
+
+      <div class="mission-cards">
+        <div class="mission-card">
+          <div class="mission-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>Quality</h3>
+          <p>We are committed to offering only the highest quality products from trusted brands and manufacturers.</p>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+          </div>
+          <h3>Affordability</h3>
+          <p>We believe that great technology should be accessible to everyone, which is why we offer competitive prices.</p>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Service</h3>
+          <p>Our dedicated customer support team is always ready to assist you with any questions or concerns.</p>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h3>Innovation</h3>
+          <p>We constantly update our inventory to include the latest and most innovative products on the market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section team-section">
+    <div class="container">
+      <h2 class="section-title">Meet Our Team</h2>
+      <p class="section-subtitle">The people behind EgZone</p>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-member-image">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe">
+          </div>
+          <div class="team-member-info">
+            <h3>John Doe</h3>
+            <p class="team-member-role">Founder & CEO</p>
+            <p class="team-member-bio">With over 15 years of experience in the tech industry, John founded EgZone with a vision to revolutionize online electronics shopping.</p>
+            <div class="team-member-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="team-member-image">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith">
+          </div>
+          <div class="team-member-info">
+            <h3>Jane Smith</h3>
+            <p class="team-member-role">Chief Technology Officer</p>
+            <p class="team-member-bio">Jane leads our tech team, ensuring that our website provides a seamless shopping experience for all our customers.</p>
+            <div class="team-member-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="team-member-image">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Johnson">
+          </div>
+          <div class="team-member-info">
+            <h3>Michael Johnson</h3>
+            <p class="team-member-role">Product Manager</p>
+            <p class="team-member-bio">Michael is responsible for curating our product selection, ensuring we offer only the best and most reliable electronics.</p>
+            <div class="team-member-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="team-member-image">
+            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Sarah Williams">
+          </div>
+          <div class="team-member-info">
+            <h3>Sarah Williams</h3>
+            <p class="team-member-role">Customer Support Manager</p>
+            <p class="team-member-bio">Sarah leads our customer support team, ensuring that every customer receives prompt and helpful assistance.</p>
+            <div class="team-member-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle">Trusted by thousands of customers</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"EgZone has the best selection of electronics I've found online. Fast shipping and excellent customer service!"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-author-image">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe">
+            </div>
+            <div class="testimonial-author-info">
+              <h4>John Doe</h4>
+              <p>Loyal Customer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"I've been shopping at EgZone for years. Their prices are competitive and the quality is always top-notch."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-author-image">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith">
+            </div>
+            <div class="testimonial-author-info">
+              <h4>Jane Smith</h4>
+              <p>Tech Enthusiast</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"The customer support at EgZone is exceptional. They helped me find the perfect laptop for my needs."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-author-image">
+              <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Johnson">
+            </div>
+            <div class="testimonial-author-info">
+              <h4>Michael Johnson</h4>
+              <p>Student</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-column">
+        <h3>EgZone</h3>
+        <p>Your one-stop shop for the latest electronics and gadgets. We offer a wide range of products at competitive prices.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="help.html">Help & FAQs</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Categories</h3>
+        <ul class="footer-links">
+          <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+          <li><a href="index.html?category=Computers">Computers</a></li>
+          <li><a href="index.html?category=Accessories">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="footer-contact">
+          <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Cairo, Egypt</p>
+          <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+          <p><i class="fas fa-envelope"></i> info@egzone.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2023 EgZone. All rights reserved. | Designed with <i class="fas fa-heart"></i> by EgZone Team</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+
+  <style>
+    /* About Page Styles */
+    .page-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      font-size: 18px;
+    }
+
+    .about-content {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-image {
+      flex: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+
+    .mission-section {
+      background-color: var(--light-background);
+    }
+
+    .mission-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .mission-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .mission-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .mission-icon {
+      font-size: 36px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .mission-card h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .team-member {
+      display: flex;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .team-member-image {
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+    }
+
+    .team-member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-member-info {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .team-member-info h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+      color: var(--secondary-color);
+    }
+
+    .team-member-role {
+      font-size: 14px;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .team-member-bio {
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .team-member-social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .team-member-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      background-color: var(--light-background);
+      border-radius: 50%;
+      color: var(--secondary-color);
+      transition: all 0.3s ease;
+    }
+
+    .team-member-social a:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (max-width: 992px) {
+      .mission-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+
+      .about-image {
+        margin-bottom: 30px;
+      }
+
+      .team-member {
+        flex-direction: column;
+      }
+
+      .team-member-image {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      .mission-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .page-header {
+        padding: 40px 0;
+      }
+
+      .page-header h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</body>
+</html>

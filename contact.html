@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - EgZone</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/components/forms.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <h1><span>Eg</span>Zone</h1>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+            <li><a href="index.html?category=Computers">Computers</a></li>
+            <li><a href="index.html?category=Accessories">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <div class="search-container">
+          <form id="search-form">
+            <input type="text" class="search-input" placeholder="Search products...">
+            <button type="submit" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <div class="live-search-results"></div>
+        </div>
+
+        <div class="auth-links">
+          <a href="login.html" title="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+
+        <div class="user-dropdown" style="display: none;">
+          <a href="#" class="dropdown-toggle">
+            <i class="fas fa-user-circle"></i>
+            <span class="user-name">User</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="add-product.html">Add Product</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+          </ul>
+        </div>
+
+        <a href="cart.html" class="cart-icon" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section">
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Have questions, feedback, or need assistance? We're here to help! Fill out the form and we'll get back to you as soon as possible.</p>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Address</h3>
+                <p>123 Tech Street, Cairo, Egypt</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Phone</h3>
+                <p>+20 123 456 7890</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Email</h3>
+                <p>info@egzone.com</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 9am - 6pm</p>
+                <p>Saturday: 10am - 4pm</p>
+                <p>Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <h2>Send Us a Message</h2>
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" class="form-control" placeholder="Enter subject" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-block">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="section map-section">
+    <div class="container">
+      <h2 class="section-title">Our Location</h2>
+      <p class="section-subtitle">Visit our store</p>
+
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.76983794854!2d31.18390205!3d30.0595581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1682442001037!5m2!1sen!2seg" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-column">
+        <h3>EgZone</h3>
+        <p>Your one-stop shop for the latest electronics and gadgets. We offer a wide range of products at competitive prices.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="help.html">Help & FAQs</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Categories</h3>
+        <ul class="footer-links">
+          <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+          <li><a href="index.html?category=Computers">Computers</a></li>
+          <li><a href="index.html?category=Accessories">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="footer-contact">
+          <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Cairo, Egypt</p>
+          <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+          <p><i class="fas fa-envelope"></i> info@egzone.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2023 EgZone. All rights reserved. | Designed with <i class="fas fa-heart"></i> by EgZone Team</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+
+  <script>
+    // Contact Form Submission
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contact-form');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          // Get form data
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const subject = document.getElementById('subject').value;
+          const message = document.getElementById('message').value;
+
+          // Validate form
+          if (!name || !email || !subject || !message) {
+            showNotification('Please fill in all fields', 'error');
+            return;
+          }
+
+          // In a real application, you would send this data to a server
+          // For now, we'll just show a success message
+          showNotification('Your message has been sent successfully!', 'success');
+
+          // Reset form
+          contactForm.reset();
+        });
+      }
+
+      function showNotification(message, type) {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+
+        // Create notification content
+        const notificationContent = document.createElement('div');
+        notificationContent.className = 'notification-content';
+
+        // Add icon based on type
+        const icon = document.createElement('i');
+        if (type === 'success') {
+          icon.className = 'fas fa-check-circle';
+        } else if (type === 'error') {
+          icon.className = 'fas fa-exclamation-circle';
+        } else {
+          icon.className = 'fas fa-info-circle';
+        }
+
+        // Create message element
+        const messageElement = document.createElement('span');
+        messageElement.textContent = message;
+
+        // Create close button
+        const closeButton = document.createElement('button');
+        closeButton.className = 'notification-close';
+        closeButton.innerHTML = '<i class="fas fa-times"></i>';
+
+        // Add event listener to close button
+        closeButton.addEventListener('click', function() {
+          notification.remove();
+        });
+
+        // Append elements
+        notificationContent.appendChild(icon);
+        notificationContent.appendChild(messageElement);
+        notification.appendChild(notificationContent);
+        notification.appendChild(closeButton);
+
+        // Add to document
+        document.body.appendChild(notification);
+
+        // Show notification
+        setTimeout(function() {
+          notification.classList.add('show');
+        }, 10);
+
+        // Auto hide after 5 seconds
+        setTimeout(function() {
+          notification.classList.remove('show');
+
+          // Remove from DOM after animation
+          setTimeout(function() {
+            notification.remove();
+          }, 300);
+        }, 5000);
+      }
+    });
+  </script>
+
+  <style>
+    /* Contact Page Styles */
+    .page-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      font-size: 18px;
+    }
+
+    .contact-container {
+      display: flex;
+      gap: 40px;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-form-container {
+      flex: 1;
+    }
+
+    .contact-info h2,
+    .contact-form-container h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+
+    .contact-info > p {
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .contact-details {
+      margin-bottom: 30px;
+    }
+
+    .contact-detail {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-right: 15px;
+    }
+
+    .contact-text h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: var(--secondary-color);
+    }
+
+    .contact-text p {
+      margin-bottom: 5px;
+      color: var(--light-text);
+    }
+
+    .contact-social h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--light-background);
+      border-radius: 50%;
+      color: var(--secondary-color);
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .contact-form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .map-container {
+      margin-top: 30px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Notification */
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 300px;
+      z-index: 1000;
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    .notification.success {
+      border-left: 4px solid var(--success-color);
+    }
+
+    .notification.error {
+      border-left: 4px solid var(--error-color);
+    }
+
+    .notification.info {
+      border-left: 4px solid var(--info-color);
+    }
+
+    .notification-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .notification-content i {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .notification-content i.fa-check-circle {
+      color: var(--success-color);
+    }
+
+    .notification-content i.fa-exclamation-circle {
+      color: var(--error-color);
+    }
+
+    .notification-content i.fa-info-circle {
+      color: var(--info-color);
+    }
+
+    .notification-close {
+      background: none;
+      border: none;
+      color: var(--light-text);
+      cursor: pointer;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (max-width: 992px) {
+      .contact-container {
+        flex-direction: column;
+      }
+
+      .contact-info,
+      .contact-form-container {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .page-header {
+        padding: 40px 0;
+      }
+
+      .page-header h1 {
+        font-size: 28px;
+      }
+
+      .notification {
+        width: calc(100% - 40px);
+      }
+    }
+  </style>
+</body>
+</html>

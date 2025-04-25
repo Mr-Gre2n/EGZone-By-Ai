@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - EgZone</title>
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <h1><span>Eg</span>Zone</h1>
+        </a>
+      </div>
+      
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+            <li><a href="index.html?category=Computers">Computers</a></li>
+            <li><a href="index.html?category=Accessories">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+      
+      <div class="navbar-actions">
+        <div class="search-container">
+          <form id="search-form">
+            <input type="text" class="search-input" placeholder="Search products...">
+            <button type="submit" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <div class="live-search-results"></div>
+        </div>
+        
+        <div class="auth-links">
+          <a href="login.html" title="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+        
+        <div class="user-dropdown" style="display: none;">
+          <a href="#" class="dropdown-toggle">
+            <i class="fas fa-user-circle"></i>
+            <span class="user-name">User</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="add-product.html">Add Product</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+          </ul>
+        </div>
+        
+        <a href="cart.html" class="cart-icon" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li><span>Shopping Cart</span></li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Cart Section -->
+  <section class="section cart-section">
+    <div class="container">
+      <h1 class="page-title">Shopping Cart</h1>
+      
+      <div class="cart-container">
+        <div class="cart-items">
+          <div class="cart-header">
+            <div class="cart-header-product">Product</div>
+            <div class="cart-header-price">Price</div>
+            <div class="cart-header-quantity">Quantity</div>
+            <div class="cart-header-total">Total</div>
+            <div class="cart-header-action"></div>
+          </div>
+          
+          <div class="cart-items-list">
+            <!-- Cart items will be loaded dynamically via JavaScript -->
+          </div>
+          
+          <div class="cart-empty" style="display: none;">
+            <div class="cart-empty-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h2>Your cart is empty</h2>
+            <p>Looks like you haven't added any products to your cart yet.</p>
+            <a href="index.html" class="btn">Continue Shopping</a>
+          </div>
+        </div>
+        
+        <div class="cart-summary">
+          <h2 class="cart-summary-title">Order Summary</h2>
+          
+          <div class="cart-summary-item">
+            <span>Subtotal</span>
+            <span class="cart-subtotal">$0.00</span>
+          </div>
+          
+          <div class="cart-summary-item">
+            <span>Shipping</span>
+            <span class="cart-shipping">$0.00</span>
+          </div>
+          
+          <div class="cart-summary-item">
+            <span>Tax</span>
+            <span class="cart-tax">$0.00</span>
+          </div>
+          
+          <div class="cart-summary-item cart-summary-total">
+            <span>Total</span>
+            <span class="cart-total">$0.00</span>
+          </div>
+          
+          <div class="cart-coupon">
+            <input type="text" class="form-control" placeholder="Coupon Code">
+            <button class="btn">Apply</button>
+          </div>
+          
+          <a href="checkout.html" class="btn btn-block checkout-btn">Proceed to Checkout</a>
+          <a href="index.html" class="btn btn-outline btn-block continue-shopping-btn">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-column">
+        <h3>EgZone</h3>
+        <p>Your one-stop shop for the latest electronics and gadgets. We offer a wide range of products at competitive prices.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="help.html">Help & FAQs</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Categories</h3>
+        <ul class="footer-links">
+          <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+          <li><a href="index.html?category=Computers">Computers</a></li>
+          <li><a href="index.html?category=Accessories">Accessories</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="footer-contact">
+          <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Cairo, Egypt</p>
+          <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+          <p><i class="fas fa-envelope"></i> info@egzone.com</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2023 EgZone. All rights reserved. | Designed with <i class="fas fa-heart"></i> by EgZone Team</p>
+    </div>
+  </footer>
+  
+  <!-- JavaScript Files -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/localStorage.js"></script>
+  <script src="assets/js/cart.js"></script>
+  
+  <style>
+    /* Cart Page Styles */
+    .page-title {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: var(--secondary-color);
+    }
+    
+    .cart-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    
+    .cart-items {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+    
+    .cart-header {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr 1fr 0.5fr;
+      padding: 15px;
+      background-color: var(--light-background);
+      font-weight: 500;
+      color: var(--secondary-color);
+    }
+    
+    .cart-item {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr 1fr 0.5fr;
+      padding: 15px;
+      border-bottom: 1px solid var(--border-color);
+      align-items: center;
+    }
+    
+    .cart-item-product {
+      display: flex;
+      align-items: center;
+    }
+    
+    .cart-item-image {
+      width: 80px;
+      height: 80px;
+      margin-right: 15px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .cart-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .cart-item-details h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    
+    .cart-item-details h3 a {
+      color: var(--secondary-color);
+    }
+    
+    .cart-item-details h3 a:hover {
+      color: var(--primary-color);
+    }
+    
+    .cart-item-price,
+    .cart-item-total {
+      font-weight: 500;
+      color: var(--secondary-color);
+    }
+    
+    .cart-item-quantity {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      overflow: hidden;
+      width: 120px;
+    }
+    
+    .cart-quantity-btn {
+      background-color: var(--light-background);
+      border: none;
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .cart-quantity-btn:hover {
+      background-color: var(--border-color);
+    }
+    
+    .cart-quantity-input {
+      width: 60px;
+      height: 30px;
+      border: none;
+      border-left: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 14px;
+    }
+    
+    .cart-quantity-input::-webkit-inner-spin-button,
+    .cart-quantity-input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    .cart-item-remove {
+      color: var(--error-color);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    
+    .cart-item-remove:hover {
+      color: #b71c1c;
+    }
+    
+    .cart-empty {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    
+    .cart-empty-icon {
+      font-size: 60px;
+      color: var(--light-text);
+      margin-bottom: 20px;
+    }
+    
+    .cart-empty h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+    
+    .cart-empty p {
+      color: var(--light-text);
+      margin-bottom: 20px;
+    }
+    
+    .cart-summary {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+    }
+    
+    .cart-summary-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .cart-summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
+    
+    .cart-summary-total {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--secondary-color);
+      padding-top: 15px;
+      margin-top: 15px;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .cart-coupon {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .cart-coupon .form-control {
+      flex: 1;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    
+    .cart-coupon .btn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    
+    .btn-block {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .checkout-btn {
+      background-color: var(--primary-color);
+    }
+    
+    .checkout-btn:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    /* Responsive Styles */
+    @media only screen and (max-width: 992px) {
+      .cart-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .cart-summary {
+        order: -1;
+        margin-bottom: 30px;
+      }
+    }
+    
+    @media only screen and (max-width: 768px) {
+      .cart-header {
+        display: none;
+      }
+      
+      .cart-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px;
+      }
+      
+      .cart-item-product {
+        grid-column: 1 / -1;
+      }
+      
+      .cart-item-price,
+      .cart-item-quantity,
+      .cart-item-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .cart-item-price::before {
+        content: 'Price:';
+        font-weight: 500;
+      }
+      
+      .cart-item-quantity::before {
+        content: 'Quantity:';
+        font-weight: 500;
+      }
+      
+      .cart-item-total::before {
+        content: 'Total:';
+        font-weight: 500;
+      }
+      
+      .cart-item-remove {
+        grid-column: 1 / -1;
+        justify-self: end;
+      }
+    }
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Render cart items
+      renderCart();
+      
+      // Update cart count
+      updateCartCount();
+    });
+    
+    function renderCart() {
+      const cartItemsList = document.querySelector('.cart-items-list');
+      const cartEmpty = document.querySelector('.cart-empty');
+      const checkoutBtn = document.querySelector('.checkout-btn');
+      
+      // Get cart from localStorage
+      const cart = getCart();
+      
+      if (cart.length === 0) {
+        // Show empty cart message
+        cartItemsList.innerHTML = '';
+        cartEmpty.style.display = 'block';
+        checkoutBtn.disabled = true;
+        checkoutBtn.classList.add('disabled');
+        
+        // Update summary
+        updateCartSummary(0, 0, 0);
+        
+        return;
+      }
+      
+      // Hide empty cart message
+      cartEmpty.style.display = 'none';
+      checkoutBtn.disabled = false;
+      checkoutBtn.classList.remove('disabled');
+      
+      // Clear cart items list
+      cartItemsList.innerHTML = '';
+      
+      // Calculate subtotal
+      let subtotal = 0;
+      
+      // Render cart items
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.dataset.id = item.id;
+        
+        cartItem.innerHTML = `
+          <div class="cart-item-product">
+            <div class="cart-item-image">
+              <img src="${item.image}" alt="${item.name}">
+            </div>
+            <div class="cart-item-details">
+              <h3><a href="product.html?id=${item.id}">${item.name}</a></h3>
+            </div>
+          </div>
+          <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+          <div class="cart-item-quantity">
+            <button class="cart-quantity-btn decrease-btn" data-id="${item.id}">-</button>
+            <input type="number" class="cart-quantity-input" value="${item.quantity}" min="1" data-id="${item.id}">
+            <button class="cart-quantity-btn increase-btn" data-id="${item.id}">+</button>
+          </div>
+          <div class="cart-item-total">$${itemTotal.toFixed(2)}</div>
+          <button class="cart-item-remove" data-id="${item.id}">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        `;
+        
+        cartItemsList.appendChild(cartItem);
+      });
+      
+      // Add event listeners to quantity buttons and remove buttons
+      const decreaseBtns = document.querySelectorAll('.decrease-btn');
+      const increaseBtns = document.querySelectorAll('.increase-btn');
+      const quantityInputs = document.querySelectorAll('.cart-quantity-input');
+      const removeBtns = document.querySelectorAll('.cart-item-remove');
+      
+      decreaseBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          updateCartItemQuantity(id, 'decrease');
+        });
+      });
+      
+      increaseBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          updateCartItemQuantity(id, 'increase');
+        });
+      });
+      
+      quantityInputs.forEach(input => {
+        input.addEventListener('change', () => {
+          const id = input.dataset.id;
+          const quantity = parseInt(input.value);
+          
+          if (quantity < 1) {
+            input.value = 1;
+            updateCartItemQuantity(id, 'set', 1);
+          } else {
+            updateCartItemQuantity(id, 'set', quantity);
+          }
+        });
+      });
+      
+      removeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          removeCartItem(id);
+        });
+      });
+      
+      // Calculate shipping and tax
+      const shipping = subtotal > 0 ? 10 : 0;
+      const tax = subtotal * 0.1;
+      
+      // Update cart summary
+      updateCartSummary(subtotal, shipping, tax);
+    }
+    
+    function updateCartItemQuantity(id, action, value) {
+      // Get cart from localStorage
+      const cart = getCart();
+      
+      // Find item in cart
+      const itemIndex = cart.findIndex(item => item.id === id);
+      
+      if (itemIndex === -1) return;
+      
+      // Update quantity based on action
+      if (action === 'decrease' && cart[itemIndex].quantity > 1) {
+        cart[itemIndex].quantity -= 1;
+      } else if (action === 'increase') {
+        cart[itemIndex].quantity += 1;
+      } else if (action === 'set') {
+        cart[itemIndex].quantity = value;
+      }
+      
+      // Save cart to localStorage
+      saveToStorage(STORAGE_KEYS.CART, cart);
+      
+      // Re-render cart
+      renderCart();
+      
+      // Update cart count
+      updateCartCount();
+    }
+    
+    function removeCartItem(id) {
+      // Get cart from localStorage
+      const cart = getCart();
+      
+      // Remove item from cart
+      const updatedCart = cart.filter(item => item.id !== id);
+      
+      // Save cart to localStorage
+      saveToStorage(STORAGE_KEYS.CART, updatedCart);
+      
+      // Re-render cart
+      renderCart();
+      
+      // Update cart count
+      updateCartCount();
+      
+      // Show success message
+      showNotification('Item removed from cart!', 'success');
+    }
+    
+    function updateCartSummary(subtotal, shipping, tax) {
+      const subtotalElement = document.querySelector('.cart-subtotal');
+      const shippingElement = document.querySelector('.cart-shipping');
+      const taxElement = document.querySelector('.cart-tax');
+      const totalElement = document.querySelector('.cart-total');
+      
+      // Calculate total
+      const total = subtotal + shipping + tax;
+      
+      // Update summary elements
+      subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+      shippingElement.textContent = `$${shipping.toFixed(2)}`;
+      taxElement.textContent = `$${tax.toFixed(2)}`;
+      totalElement.textContent = `$${total.toFixed(2)}`;
+    }
+    
+    function updateCartCount() {
+      const cartCountElement = document.querySelector('.cart-count');
+      const cart = getCart();
+      
+      // Calculate total items in cart
+      const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+      
+      // Update cart count
+      cartCountElement.textContent = itemCount;
+    }
+    
+    function showNotification(message, type) {
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.className = `notification ${type}`;
+      
+      notification.innerHTML = `
+        <div class="notification-content">
+          <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+          <span>${message}</span>
+        </div>
+        <button class="notification-close">
+          <i class="fas fa-times"></i>
+        </button>
+      `;
+      
+      // Add notification to body
+      document.body.appendChild(notification);
+      
+      // Show notification
+      setTimeout(() => {
+        notification.classList.add('show');
+      }, 100);
+      
+      // Add event listener to close button
+      const closeBtn = notification.querySelector('.notification-close');
+      closeBtn.addEventListener('click', () => {
+        notification.classList.remove('show');
+        
+        // Remove notification after animation
+        setTimeout(() => {
+          notification.remove();
+        }, 300);
+      });
+      
+      // Auto hide notification after 3 seconds
+      setTimeout(() => {
+        notification.classList.remove('show');
+        
+        // Remove notification after animation
+        setTimeout(() => {
+          notification.remove();
+        }, 300);
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - EgZone</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/components/product-card.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <h1><span>Eg</span>Zone</h1>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+            <li><a href="index.html?category=Computers">Computers</a></li>
+            <li><a href="index.html?category=Accessories">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <div class="search-container">
+          <form id="search-form">
+            <input type="text" class="search-input" placeholder="Search products...">
+            <button type="submit" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <div class="live-search-results"></div>
+        </div>
+
+        <div class="auth-links">
+          <a href="login.html" title="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+
+        <div class="user-dropdown" style="display: none;">
+          <a href="#" class="dropdown-toggle">
+            <i class="fas fa-user-circle"></i>
+            <span class="user-name">User</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="add-product.html">Add Product</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+          </ul>
+        </div>
+
+        <a href="cart.html" class="cart-icon" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li><span id="product-category">Category</span></li>
+        <li><span id="product-name">Product Name</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Product Details Section -->
+  <section class="section product-details-section">
+    <div class="container">
+      <div class="product-details">
+        <!-- Product details will be loaded dynamically via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Tabs Section -->
+  <section class="section product-tabs-section">
+    <div class="container">
+      <div class="product-tabs">
+        <div class="product-tabs-header">
+          <button class="product-tab active" data-tab="description">Description</button>
+          <button class="product-tab" data-tab="specifications">Specifications</button>
+          <button class="product-tab" data-tab="reviews">Reviews</button>
+        </div>
+
+        <div class="product-tabs-content">
+          <div class="product-tab-pane active" id="description">
+            <div class="product-description">
+              <!-- Product description will be loaded dynamically via JavaScript -->
+            </div>
+          </div>
+
+          <div class="product-tab-pane" id="specifications">
+            <div class="product-specifications">
+              <!-- Product specifications will be loaded dynamically via JavaScript -->
+            </div>
+          </div>
+
+          <div class="product-tab-pane" id="reviews">
+            <div class="product-reviews">
+              <div class="product-reviews-summary">
+                <!-- Reviews summary will be loaded dynamically via JavaScript -->
+              </div>
+
+              <div class="product-reviews-list">
+                <!-- Reviews will be loaded dynamically via JavaScript -->
+              </div>
+
+              <div class="product-review-form">
+                <h3>Write a Review</h3>
+                <form id="review-form">
+                  <div class="form-group">
+                    <label for="review-rating">Rating</label>
+                    <div class="rating-input">
+                      <i class="far fa-star" data-rating="1"></i>
+                      <i class="far fa-star" data-rating="2"></i>
+                      <i class="far fa-star" data-rating="3"></i>
+                      <i class="far fa-star" data-rating="4"></i>
+                      <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="review-rating" name="rating" value="0">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="review-title">Title</label>
+                    <input type="text" id="review-title" name="title" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="review-content">Review</label>
+                    <textarea id="review-content" name="content" class="form-control" rows="5" required></textarea>
+                  </div>
+
+                  <button type="submit" class="btn">Submit Review</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products Section -->
+  <section class="section related-products-section">
+    <div class="container">
+      <h2 class="section-title">Related Products</h2>
+      <p class="section-subtitle">You might also like</p>
+
+      <div class="related-products-grid">
+        <!-- Related products will be loaded dynamically via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-column">
+        <h3>EgZone</h3>
+        <p>Your one-stop shop for the latest electronics and gadgets. We offer a wide range of products at competitive prices.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="help.html">Help & FAQs</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Categories</h3>
+        <ul class="footer-links">
+          <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+          <li><a href="index.html?category=Computers">Computers</a></li>
+          <li><a href="index.html?category=Accessories">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="footer-contact">
+          <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Cairo, Egypt</p>
+          <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+          <p><i class="fas fa-envelope"></i> info@egzone.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2023 EgZone. All rights reserved. | Designed with <i class="fas fa-heart"></i> by EgZone Team</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="assets/js/image-handler.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/localStorage.js"></script>
+
+  <style>
+    /* Product Details Page Styles */
+    .breadcrumb {
+      background-color: var(--light-background);
+      padding: 15px 0;
+      margin-bottom: 30px;
+    }
+
+    .breadcrumb-list {
+      display: flex;
+      align-items: center;
+    }
+
+    .breadcrumb-list li {
+      display: flex;
+      align-items: center;
+    }
+
+    .breadcrumb-list li:not(:last-child)::after {
+      content: '/';
+      margin: 0 10px;
+      color: var(--light-text);
+    }
+
+    .breadcrumb-list li a {
+      color: var(--light-text);
+    }
+
+    .breadcrumb-list li a:hover {
+      color: var(--primary-color);
+    }
+
+    .breadcrumb-list li:last-child span {
+      color: var(--secondary-color);
+      font-weight: 500;
+    }
+
+    .product-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .product-image {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .product-badge.new {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .product-badge.sale {
+      background-color: var(--error-color);
+      color: white;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-title {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .product-category {
+      color: var(--light-text);
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+    }
+
+    .product-stars {
+      color: #ffc107;
+      margin-right: 10px;
+    }
+
+    .product-review-count {
+      color: var(--light-text);
+      font-size: 14px;
+    }
+
+    .product-price {
+      margin-bottom: 20px;
+    }
+
+    .current-price {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-right: 10px;
+    }
+
+    .old-price {
+      font-size: 20px;
+      color: var(--light-text);
+      text-decoration: line-through;
+    }
+
+    .product-description {
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .product-features {
+      margin-bottom: 20px;
+    }
+
+    .product-features h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+
+    .product-features ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .product-features li {
+      margin-bottom: 5px;
+      color: var(--text-color);
+    }
+
+    .product-stock {
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .product-stock.in-stock {
+      color: var(--success-color);
+    }
+
+    .product-stock.low-stock {
+      color: var(--warning-color);
+    }
+
+    .product-stock.out-of-stock {
+      color: var(--error-color);
+    }
+
+    .product-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .product-quantity {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .quantity-btn {
+      background-color: var(--light-background);
+      border: none;
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .quantity-btn:hover {
+      background-color: var(--border-color);
+    }
+
+    .quantity-input {
+      width: 60px;
+      height: 40px;
+      border: none;
+      border-left: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .quantity-input::-webkit-inner-spin-button,
+    .quantity-input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .add-to-cart-btn {
+      flex: 1;
+    }
+
+    .wishlist-btn {
+      width: 50px;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 42px;
+    }
+
+    /* Product Tabs */
+    .product-tabs {
+      margin-bottom: 60px;
+    }
+
+    .product-tabs-header {
+      display: flex;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 30px;
+    }
+
+    .product-tab {
+      padding: 15px 30px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--light-text);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .product-tab:hover {
+      color: var(--primary-color);
+    }
+
+    .product-tab.active {
+      color: var(--primary-color);
+      border-bottom-color: var(--primary-color);
+    }
+
+    .product-tab-pane {
+      display: none;
+    }
+
+    .product-tab-pane.active {
+      display: block;
+    }
+
+    /* Product Reviews */
+    .product-reviews-summary {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .product-reviews-average {
+      text-align: center;
+    }
+
+    .average-rating {
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--secondary-color);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .average-stars {
+      color: #ffc107;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .total-reviews {
+      color: var(--light-text);
+    }
+
+    .product-reviews-breakdown {
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .rating-breakdown {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .rating-level {
+      width: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .rating-level i {
+      color: #ffc107;
+      margin-right: 5px;
+    }
+
+    .rating-bar {
+      flex: 1;
+      height: 8px;
+      background-color: var(--light-background);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 0 10px;
+    }
+
+    .rating-fill {
+      height: 100%;
+      background-color: var(--primary-color);
+    }
+
+    .rating-count {
+      width: 40px;
+      text-align: right;
+      color: var(--light-text);
+    }
+
+    .product-reviews-list {
+      margin-bottom: 40px;
+    }
+
+    .review {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .review-author {
+      font-weight: 500;
+      color: var(--secondary-color);
+    }
+
+    .review-date {
+      color: var(--light-text);
+      font-size: 14px;
+    }
+
+    .review-rating {
+      color: #ffc107;
+      margin-bottom: 10px;
+    }
+
+    .review-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+
+    .review-content {
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+
+    .product-review-form {
+      background-color: var(--light-background);
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .product-review-form h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+
+    .rating-input {
+      display: flex;
+      font-size: 24px;
+      color: #ffc107;
+      margin-bottom: 10px;
+    }
+
+    .rating-input i {
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    /* Related Products */
+    .related-products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (max-width: 992px) {
+      .product-details {
+        grid-template-columns: 1fr;
+      }
+
+      .related-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .product-reviews-summary {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-reviews-average {
+        margin-bottom: 30px;
+      }
+
+      .product-reviews-breakdown {
+        max-width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .product-tabs-header {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+      }
+
+      .product-tab {
+        padding: 15px 20px;
+      }
+
+      .related-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-actions {
+        flex-wrap: wrap;
+      }
+
+      .product-quantity {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .add-to-cart-btn,
+      .wishlist-btn {
+        flex: 1;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      .related-products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-meta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .product-category {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+
+  <script>
+    // Product Tabs
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.product-tab');
+      const tabPanes = document.querySelectorAll('.product-tab-pane');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const tabId = tab.dataset.tab;
+
+          // Remove active class from all tabs and tab panes
+          tabs.forEach(t => t.classList.remove('active'));
+          tabPanes.forEach(p => p.classList.remove('active'));
+
+          // Add active class to clicked tab and corresponding tab pane
+          tab.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+
+      // Rating Input
+      const ratingStars = document.querySelectorAll('.rating-input i');
+      const ratingInput = document.getElementById('review-rating');
+
+      ratingStars.forEach(star => {
+        star.addEventListener('mouseover', () => {
+          const rating = parseInt(star.dataset.rating);
+
+          ratingStars.forEach(s => {
+            const starRating = parseInt(s.dataset.rating);
+
+            if (starRating <= rating) {
+              s.className = 'fas fa-star';
+            } else {
+              s.className = 'far fa-star';
+            }
+          });
+        });
+
+        star.addEventListener('mouseout', () => {
+          const currentRating = parseInt(ratingInput.value);
+
+          ratingStars.forEach(s => {
+            const starRating = parseInt(s.dataset.rating);
+
+            if (starRating <= currentRating) {
+              s.className = 'fas fa-star';
+            } else {
+              s.className = 'far fa-star';
+            }
+          });
+        });
+
+        star.addEventListener('click', () => {
+          const rating = parseInt(star.dataset.rating);
+          ratingInput.value = rating;
+        });
+      });
+
+      // Review Form
+      const reviewForm = document.getElementById('review-form');
+
+      if (reviewForm) {
+        reviewForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const rating = parseInt(document.getElementById('review-rating').value);
+          const title = document.getElementById('review-title').value;
+          const content = document.getElementById('review-content').value;
+
+          if (rating === 0) {
+            alert('Please select a rating');
+            return;
+          }
+
+          // Get product ID from URL
+          const urlParams = new URLSearchParams(window.location.search);
+          const productId = urlParams.get('id');
+
+          // Get current user
+          const currentUser = getCurrentUser();
+
+          if (!currentUser) {
+            alert('Please login to write a review');
+            window.location.href = 'login.html';
+            return;
+          }
+
+          // Create review object
+          const review = {
+            id: Date.now().toString(),
+            productId: productId,
+            userId: currentUser.id,
+            userName: currentUser.name,
+            rating: rating,
+            title: title,
+            content: content,
+            date: new Date().toISOString()
+          };
+
+          // Get product reviews from localStorage
+          let reviews = JSON.parse(localStorage.getItem('egzone_reviews')) || [];
+
+          // Add new review
+          reviews.push(review);
+
+          // Save reviews to localStorage
+          localStorage.setItem('egzone_reviews', JSON.stringify(reviews));
+
+          // Update product rating
+          updateProductRating(productId, reviews);
+
+          // Reset form
+          reviewForm.reset();
+          document.getElementById('review-rating').value = 0;
+          ratingStars.forEach(s => s.className = 'far fa-star');
+
+          // Show success message
+          alert('Review submitted successfully');
+
+          // Reload page to show new review
+          window.location.reload();
+        });
+      }
+    });
+
+    function updateProductRating(productId, reviews) {
+      // Get product reviews
+      const productReviews = reviews.filter(review => review.productId === productId);
+
+      // Calculate average rating
+      const totalRating = productReviews.reduce((sum, review) => sum + review.rating, 0);
+      const averageRating = productReviews.length > 0 ? totalRating / productReviews.length : 0;
+
+      // Get products from localStorage
+      let products = JSON.parse(localStorage.getItem('egzone_products')) || [];
+
+      // Find product
+      const productIndex = products.findIndex(product => product.id === productId);
+
+      if (productIndex !== -1) {
+        // Update product rating and reviews count
+        products[productIndex].rating = averageRating;
+        products[productIndex].reviews = productReviews.length;
+
+        // Save products to localStorage
+        localStorage.setItem('egzone_products', JSON.stringify(products));
+      }
+    }
+  </script>
+</body>
+</html>

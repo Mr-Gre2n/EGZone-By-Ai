@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EgZone - Online Electronics Store</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/components/product-card.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <h1><span>Eg</span>Zone</h1>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="navbar-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+            <li><a href="index.html?category=Computers">Computers</a></li>
+            <li><a href="index.html?category=Accessories">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="profile.html">My Profile</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <div class="search-container">
+          <form id="search-form">
+            <input type="text" class="search-input" placeholder="Search products...">
+            <button type="submit" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <div class="live-search-results"></div>
+        </div>
+
+        <div class="auth-links">
+          <a href="login.html" title="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+
+        <div class="user-dropdown" style="display: none;">
+          <a href="#" class="dropdown-toggle">
+            <i class="fas fa-user-circle"></i>
+            <span class="user-name">User</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="add-product.html">Add Product</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+          </ul>
+        </div>
+
+        <a href="cart.html" class="cart-icon" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Welcome to <span>EgZone</span></h1>
+        <p>Your one-stop shop for the latest electronics and gadgets</p>
+        <div class="hero-buttons">
+          <a href="#featured-products" class="btn">Shop Now</a>
+          <a href="about.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="section categories-section">
+    <div class="container">
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-subtitle">Browse our wide range of products</p>
+
+      <div class="categories-grid">
+        <div class="category-card">
+          <a href="index.html?category=Smartphones">
+            <div class="category-image">
+              <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Smartphones" onerror="handleImageError(this, 'Smartphones')">
+            </div>
+            <div class="category-content">
+              <h3>Smartphones</h3>
+              <p>Latest models from top brands</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="category-card">
+          <a href="index.html?category=Computers">
+            <div class="category-image">
+              <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Computers" onerror="handleImageError(this, 'Computers')">
+            </div>
+            <div class="category-content">
+              <h3>Computers</h3>
+              <p>Laptops, desktops, and accessories</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="category-card">
+          <a href="index.html?category=Accessories">
+            <div class="category-image">
+              <img src="https://images.unsplash.com/photo-1625466991342-f2a8c1a68c6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Accessories" onerror="handleImageError(this, 'Accessories')">
+            </div>
+            <div class="category-content">
+              <h3>Accessories</h3>
+              <p>Enhance your tech experience</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="section featured-products-section" id="featured-products">
+    <div class="container">
+      <h2 class="section-title">Featured Products</h2>
+      <p class="section-subtitle">Handpicked for you</p>
+
+      <div class="category-filter">
+        <a href="#" data-category="all" class="active">All</a>
+        <a href="#" data-category="Smartphones">Smartphones</a>
+        <a href="#" data-category="Computers">Computers</a>
+        <a href="#" data-category="Accessories">Accessories</a>
+      </div>
+
+      <div class="product-grid">
+        <!-- Products will be loaded dynamically via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Offer Section -->
+  <section class="section special-offer-section">
+    <div class="container">
+      <div class="special-offer">
+        <div class="special-offer-content">
+          <h2>Special Offer</h2>
+          <h3>Get 20% Off on All Accessories</h3>
+          <p>Limited time offer. Use code: <strong>EGZONE20</strong></p>
+          <a href="index.html?category=Accessories" class="btn">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals Section -->
+  <section class="section new-arrivals-section">
+    <div class="container">
+      <h2 class="section-title">New Arrivals</h2>
+      <p class="section-subtitle">The latest additions to our store</p>
+
+      <div class="new-arrivals-slider">
+        <div class="new-arrivals-grid">
+          <!-- New arrivals will be loaded dynamically via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle">Trusted by thousands of customers</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"EgZone has the best selection of electronics I've found online. Fast shipping and excellent customer service!"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-author-image">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe">
+            </div>
+            <div class="testimonial-author-info">
+              <h4>John Doe</h4>
+              <p>Loyal Customer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"I've been shopping at EgZone for years. Their prices are competitive and the quality is always top-notch."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-author-image">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith">
+            </div>
+            <div class="testimonial-author-info">
+              <h4>Jane Smith</h4>
+              <p>Tech Enthusiast</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"The customer support at EgZone is exceptional. They helped me find the perfect laptop for my needs."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-author-image">
+              <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Johnson">
+            </div>
+            <div class="testimonial-author-info">
+              <h4>Michael Johnson</h4>
+              <p>Student</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="section newsletter-section">
+    <div class="container">
+      <div class="newsletter">
+        <div class="newsletter-content">
+          <h2>Subscribe to Our Newsletter</h2>
+          <p>Get the latest updates, offers, and news from EgZone</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your email address">
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-column">
+        <h3>EgZone</h3>
+        <p>Your one-stop shop for the latest electronics and gadgets. We offer a wide range of products at competitive prices.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="help.html">Help & FAQs</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Categories</h3>
+        <ul class="footer-links">
+          <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+          <li><a href="index.html?category=Computers">Computers</a></li>
+          <li><a href="index.html?category=Accessories">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="footer-contact">
+          <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Cairo, Egypt</p>
+          <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+          <p><i class="fas fa-envelope"></i> info@egzone.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2023 EgZone. All rights reserved. | Designed with <i class="fas fa-heart"></i> by EgZone Team</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="assets/js/image-handler.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/search.js"></script>
+
+  <style>
+    /* Additional Styles for Home Page */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--primary-color);
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .category-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .category-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .category-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .category-card:hover .category-image img {
+      transform: scale(1.05);
+    }
+
+    .category-content {
+      padding: 20px;
+      text-align: center;
+      background-color: white;
+    }
+
+    .category-content h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+
+    .category-content p {
+      color: var(--light-text);
+    }
+
+    .category-filter {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .category-filter a {
+      padding: 8px 15px;
+      margin: 0 5px;
+      border-radius: 4px;
+      color: var(--secondary-color);
+      transition: all 0.3s ease;
+    }
+
+    .category-filter a:hover,
+    .category-filter a.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .special-offer {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1563770660941-10a63607739e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 60px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .special-offer h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+
+    .special-offer h3 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .special-offer p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .new-arrivals-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .testimonial {
+      background-color: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .testimonial-content {
+      margin-bottom: 20px;
+    }
+
+    .testimonial-content p {
+      font-style: italic;
+      color: var(--secondary-color);
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonial-author-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+
+    .testimonial-author-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .testimonial-author-info h4 {
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: var(--secondary-color);
+    }
+
+    .testimonial-author-info p {
+      font-size: 14px;
+      color: var(--light-text);
+    }
+
+    .newsletter {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 40px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .newsletter-content {
+      flex: 1;
+    }
+
+    .newsletter-content h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 16px;
+    }
+
+    .newsletter-btn {
+      background-color: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 0 20px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .newsletter-btn:hover {
+      background-color: #222;
+    }
+
+    /* Notification */
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 300px;
+      z-index: 1000;
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    .notification.success {
+      border-left: 4px solid var(--success-color);
+    }
+
+    .notification.error {
+      border-left: 4px solid var(--error-color);
+    }
+
+    .notification.info {
+      border-left: 4px solid var(--info-color);
+    }
+
+    .notification-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .notification-content i {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .notification-content i.fa-check-circle {
+      color: var(--success-color);
+    }
+
+    .notification-content i.fa-exclamation-circle {
+      color: var(--error-color);
+    }
+
+    .notification-content i.fa-info-circle {
+      color: var(--info-color);
+    }
+
+    .notification-close {
+      background: none;
+      border: none;
+      color: var(--light-text);
+      cursor: pointer;
+    }
+
+    /* Live Search */
+    .live-search-results {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      z-index: 100;
+      display: none;
+    }
+
+    .live-search-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .live-search-item {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .live-search-item a {
+      display: flex;
+      padding: 10px;
+      color: var(--secondary-color);
+    }
+
+    .live-search-item a:hover {
+      background-color: var(--light-background);
+    }
+
+    .live-search-image {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .live-search-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .live-search-content {
+      flex: 1;
+    }
+
+    .live-search-title {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .live-search-category {
+      font-size: 12px;
+      color: var(--light-text);
+      margin-bottom: 5px;
+    }
+
+    .live-search-price {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .live-search-view-all {
+      padding: 10px;
+      text-align: center;
+      background-color: var(--light-background);
+    }
+
+    .live-search-view-all a {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    .live-search-no-results {
+      padding: 15px;
+      text-align: center;
+      color: var(--light-text);
+    }
+
+    .highlight {
+      background-color: rgba(26, 186, 26, 0.2);
+      padding: 0 2px;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (max-width: 992px) {
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .new-arrivals-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .newsletter {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .newsletter-content {
+        margin-bottom: 20px;
+      }
+
+      .newsletter-form {
+        max-width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .new-arrivals-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .special-offer {
+        padding: 30px;
+      }
+
+      .special-offer h3 {
+        font-size: 28px;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .new-arrivals-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .notification {
+        width: calc(100% - 40px);
+      }
+    }
+  </style>
+</body>
+</html>

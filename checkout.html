@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - EgZone</title>
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <h1><span>Eg</span>Zone</h1>
+        </a>
+      </div>
+      
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+            <li><a href="index.html?category=Computers">Computers</a></li>
+            <li><a href="index.html?category=Accessories">Accessories</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+      
+      <div class="navbar-actions">
+        <div class="search-container">
+          <form id="search-form">
+            <input type="text" class="search-input" placeholder="Search products...">
+            <button type="submit" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <div class="live-search-results"></div>
+        </div>
+        
+        <div class="auth-links">
+          <a href="login.html" title="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+        
+        <div class="user-dropdown" style="display: none;">
+          <a href="#" class="dropdown-toggle">
+            <i class="fas fa-user-circle"></i>
+            <span class="user-name">User</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="add-product.html">Add Product</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+          </ul>
+        </div>
+        
+        <a href="cart.html" class="cart-icon" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Shopping Cart</a></li>
+        <li><span>Checkout</span></li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Checkout Section -->
+  <section class="section checkout-section">
+    <div class="container">
+      <h1 class="page-title">Checkout</h1>
+      
+      <div class="checkout-container">
+        <div class="checkout-form-container">
+          <form id="checkout-form">
+            <div class="checkout-section">
+              <h2 class="checkout-section-title">Shipping Information</h2>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name</label>
+                  <input type="text" id="first-name" name="firstName" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="last-name">Last Name</label>
+                  <input type="text" id="last-name" name="lastName" class="form-control" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" class="form-control" required>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <input type="text" id="city" name="city" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="state">State/Province</label>
+                  <input type="text" id="state" name="state" class="form-control" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="zip">Postal/Zip Code</label>
+                  <input type="text" id="zip" name="zip" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <select id="country" name="country" class="form-control" required>
+                    <option value="">Select Country</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Japan">Japan</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="checkout-section">
+              <h2 class="checkout-section-title">Payment Method</h2>
+              
+              <div class="payment-methods">
+                <div class="payment-method">
+                  <input type="radio" id="credit-card" name="paymentMethod" value="credit-card" checked>
+                  <label for="credit-card">
+                    <span class="payment-method-name">Credit Card</span>
+                    <span class="payment-method-icons">
+                      <i class="fab fa-cc-visa"></i>
+                      <i class="fab fa-cc-mastercard"></i>
+                      <i class="fab fa-cc-amex"></i>
+                    </span>
+                  </label>
+                </div>
+                
+                <div class="payment-method">
+                  <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                  <label for="paypal">
+                    <span class="payment-method-name">PayPal</span>
+                    <span class="payment-method-icons">
+                      <i class="fab fa-paypal"></i>
+                    </span>
+                  </label>
+                </div>
+                
+                <div class="payment-method">
+                  <input type="radio" id="cash-on-delivery" name="paymentMethod" value="cash-on-delivery">
+                  <label for="cash-on-delivery">
+                    <span class="payment-method-name">Cash on Delivery</span>
+                    <span class="payment-method-icons">
+                      <i class="fas fa-money-bill-wave"></i>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              
+              <div id="credit-card-details">
+                <div class="form-group">
+                  <label for="card-number">Card Number</label>
+                  <input type="text" id="card-number" name="cardNumber" class="form-control" placeholder="1234 5678 9012 3456">
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" name="cardName" class="form-control">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="card-expiry">Expiry Date</label>
+                    <input type="text" id="card-expiry" name="cardExpiry" class="form-control" placeholder="MM/YY">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="card-cvv">CVV</label>
+                    <input type="text" id="card-cvv" name="cardCvv" class="form-control" placeholder="123">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="checkout-section">
+              <h2 class="checkout-section-title">Order Notes</h2>
+              
+              <div class="form-group">
+                <label for="order-notes">Notes about your order (optional)</label>
+                <textarea id="order-notes" name="orderNotes" class="form-control" rows="4"></textarea>
+              </div>
+            </div>
+            
+            <div class="checkout-actions">
+              <a href="cart.html" class="btn btn-outline">Back to Cart</a>
+              <button type="submit" class="btn place-order-btn">Place Order</button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="checkout-summary">
+          <h2 class="checkout-summary-title">Order Summary</h2>
+          
+          <div class="checkout-items">
+            <!-- Order items will be loaded dynamically via JavaScript -->
+          </div>
+          
+          <div class="checkout-summary-details">
+            <div class="checkout-summary-item">
+              <span>Subtotal</span>
+              <span class="checkout-subtotal">$0.00</span>
+            </div>
+            
+            <div class="checkout-summary-item">
+              <span>Shipping</span>
+              <span class="checkout-shipping">$0.00</span>
+            </div>
+            
+            <div class="checkout-summary-item">
+              <span>Tax</span>
+              <span class="checkout-tax">$0.00</span>
+            </div>
+            
+            <div class="checkout-summary-item checkout-summary-total">
+              <span>Total</span>
+              <span class="checkout-total">$0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-column">
+        <h3>EgZone</h3>
+        <p>Your one-stop shop for the latest electronics and gadgets. We offer a wide range of products at competitive prices.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="help.html">Help & FAQs</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Categories</h3>
+        <ul class="footer-links">
+          <li><a href="index.html?category=Smartphones">Smartphones</a></li>
+          <li><a href="index.html?category=Computers">Computers</a></li>
+          <li><a href="index.html?category=Accessories">Accessories</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="footer-contact">
+          <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Cairo, Egypt</p>
+          <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+          <p><i class="fas fa-envelope"></i> info@egzone.com</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2023 EgZone. All rights reserved. | Designed with <i class="fas fa-heart"></i> by EgZone Team</p>
+    </div>
+  </footer>
+  
+  <!-- JavaScript Files -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/localStorage.js"></script>
+  
+  <style>
+    /* Checkout Page Styles */
+    .page-title {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: var(--secondary-color);
+    }
+    
+    .checkout-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    
+    .checkout-form-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+    }
+    
+    .checkout-section {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .checkout-section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    
+    .checkout-section-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    .payment-methods {
+      margin-bottom: 20px;
+    }
+    
+    .payment-method {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+    
+    .payment-method:hover {
+      border-color: var(--primary-color);
+    }
+    
+    .payment-method input[type="radio"] {
+      margin-right: 10px;
+    }
+    
+    .payment-method label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+    
+    .payment-method-icons {
+      color: var(--light-text);
+      font-size: 20px;
+    }
+    
+    .payment-method-icons i {
+      margin-left: 5px;
+    }
+    
+    .checkout-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    
+    .place-order-btn {
+      background-color: var(--primary-color);
+    }
+    
+    .place-order-btn:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    .checkout-summary {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+    }
+    
+    .checkout-summary-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .checkout-items {
+      margin-bottom: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    
+    .checkout-item {
+      display: flex;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .checkout-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    
+    .checkout-item-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+    
+    .checkout-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .checkout-item-details {
+      flex: 1;
+    }
+    
+    .checkout-item-name {
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: var(--secondary-color);
+    }
+    
+    .checkout-item-price {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-color);
+      font-size: 14px;
+    }
+    
+    .checkout-summary-details {
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .checkout-summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
+    
+    .checkout-summary-total {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--secondary-color);
+      padding-top: 15px;
+      margin-top: 15px;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    /* Responsive Styles */
+    @media only screen and (max-width: 992px) {
+      .checkout-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .checkout-summary {
+        order: -1;
+        margin-bottom: 30px;
+      }
+    }
+    
+    @media only screen and (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .checkout-actions {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .checkout-actions .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if user is logged in
+      const currentUser = getCurrentUser();
+      
+      if (!currentUser || !currentUser.isLoggedIn) {
+        // Redirect to login page
+        window.location.href = 'login.html?redirect=checkout.html';
+        return;
+      }
+      
+      // Check if cart is empty
+      const cart = getCart();
+      
+      if (cart.length === 0) {
+        // Redirect to cart page
+        window.location.href = 'cart.html';
+        return;
+      }
+      
+      // Pre-fill form with user data
+      if (currentUser) {
+        document.getElementById('first-name').value = currentUser.firstName || '';
+        document.getElementById('last-name').value = currentUser.lastName || '';
+        document.getElementById('email').value = currentUser.email || '';
+        document.getElementById('phone').value = currentUser.phone || '';
+        document.getElementById('address').value = currentUser.address || '';
+        document.getElementById('city').value = currentUser.city || '';
+        document.getElementById('state').value = currentUser.state || '';
+        document.getElementById('zip').value = currentUser.zip || '';
+        document.getElementById('country').value = currentUser.country || '';
+      }
+      
+      // Render order summary
+      renderOrderSummary();
+      
+      // Payment method toggle
+      const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+      const creditCardDetails = document.getElementById('credit-card-details');
+      
+      paymentMethods.forEach(method => {
+        method.addEventListener('change', () => {
+          if (method.value === 'credit-card') {
+            creditCardDetails.style.display = 'block';
+          } else {
+            creditCardDetails.style.display = 'none';
+          }
+        });
+      });
+      
+      // Form submission
+      const checkoutForm = document.getElementById('checkout-form');
+      
+      checkoutForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(checkoutForm);
+        const orderData = {};
+        
+        for (const [key, value] of formData.entries()) {
+          orderData[key] = value;
+        }
+        
+        // Create order object
+        const order = {
+          id: generateOrderId(),
+          userId: currentUser.id,
+          items: cart,
+          shipping: orderData,
+          payment: {
+            method: orderData.paymentMethod,
+            details: orderData.paymentMethod === 'credit-card' ? {
+              cardNumber: orderData.cardNumber,
+              cardName: orderData.cardName,
+              cardExpiry: orderData.cardExpiry,
+              cardCvv: orderData.cardCvv
+            } : null
+          },
+          subtotal: calculateSubtotal(cart),
+          shipping: 10,
+          tax: calculateSubtotal(cart) * 0.1,
+          total: calculateSubtotal(cart) + 10 + (calculateSubtotal(cart) * 0.1),
+          status: 'pending',
+          date: new Date().toISOString(),
+          notes: orderData.orderNotes
+        };
+        
+        // Save order to localStorage
+        saveOrder(order);
+        
+        // Clear cart
+        clearCart();
+        
+        // Redirect to order confirmation page
+        window.location.href = `order-confirmation.html?id=${order.id}`;
+      });
+    });
+    
+    function renderOrderSummary() {
+      const checkoutItems = document.querySelector('.checkout-items');
+      const subtotalElement = document.querySelector('.checkout-subtotal');
+      const shippingElement = document.querySelector('.checkout-shipping');
+      const taxElement = document.querySelector('.checkout-tax');
+      const totalElement = document.querySelector('.checkout-total');
+      
+      // Get cart from localStorage
+      const cart = getCart();
+      
+      // Clear checkout items
+      checkoutItems.innerHTML = '';
+      
+      // Calculate subtotal
+      let subtotal = 0;
+      
+      // Render checkout items
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        
+        const checkoutItem = document.createElement('div');
+        checkoutItem.className = 'checkout-item';
+        
+        checkoutItem.innerHTML = `
+          <div class="checkout-item-image">
+            <img src="${item.image}" alt="${item.name}">
+          </div>
+          <div class="checkout-item-details">
+            <div class="checkout-item-name">${item.name} x ${item.quantity}</div>
+            <div class="checkout-item-price">
+              <span>$${item.price.toFixed(2)} each</span>
+              <span>$${itemTotal.toFixed(2)}</span>
+            </div>
+          </div>
+        `;
+        
+        checkoutItems.appendChild(checkoutItem);
+      });
+      
+      // Calculate shipping and tax
+      const shipping = 10;
+      const tax = subtotal * 0.1;
+      const total = subtotal + shipping + tax;
+      
+      // Update summary elements
+      subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+      shippingElement.textContent = `$${shipping.toFixed(2)}`;
+      taxElement.textContent = `$${tax.toFixed(2)}`;
+      totalElement.textContent = `$${total.toFixed(2)}`;
+    }
+    
+    function calculateSubtotal(cart) {
+      return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+    }
+    
+    function generateOrderId() {
+      return 'ORD' + Date.now().toString().slice(-8);
+    }
+    
+    function saveOrder(order) {
+      // Get orders from localStorage
+      let orders = JSON.parse(localStorage.getItem('egzone_orders')) || [];
+      
+      // Add new order
+      orders.push(order);
+      
+      // Save orders to localStorage
+      localStorage.setItem('egzone_orders', JSON.stringify(orders));
+    }
+  </script>
+</body>
+</html>

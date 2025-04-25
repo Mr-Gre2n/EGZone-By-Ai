@@ -1,0 +1,216 @@
+/* EgZone Online Store - Forms Component */
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.form-subtitle {
+  font-size: 16px;
+  color: var(--light-text);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(26, 186, 26, 0.1);
+}
+
+.form-control.error {
+  border-color: var(--error-color);
+}
+
+.form-error {
+  color: var(--error-color);
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.form-text {
+  font-size: 14px;
+  color: var(--light-text);
+  margin-top: 5px;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-check-input {
+  margin-right: 10px;
+}
+
+.form-check-label {
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+.form-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.form-btn:disabled {
+  background-color: var(--light-text);
+  cursor: not-allowed;
+}
+
+.form-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.form-divider-text {
+  padding: 0 10px;
+  color: var(--light-text);
+  font-size: 14px;
+}
+
+.form-social-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-social-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: white;
+  color: var(--secondary-color);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-social-btn:first-child {
+  margin-right: 10px;
+}
+
+.form-social-btn i {
+  margin-right: 10px;
+}
+
+.form-social-btn.facebook:hover {
+  background-color: #3b5998;
+  border-color: #3b5998;
+  color: white;
+}
+
+.form-social-btn.google:hover {
+  background-color: #db4437;
+  border-color: #db4437;
+  color: white;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--light-text);
+}
+
+.form-footer a {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Form Layouts */
+.form-row {
+  display: flex;
+  margin: 0 -10px;
+}
+
+.form-col {
+  flex: 1;
+  padding: 0 10px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 576px) {
+  .form-container {
+    padding: 20px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-col {
+    padding: 0;
+  }
+  
+  .form-social-btns {
+    flex-direction: column;
+  }
+  
+  .form-social-btn:first-child {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
